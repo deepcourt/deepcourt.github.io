@@ -1,0 +1,53 @@
+body {
+    font-family: sans-serif; /* Use a common, web-safe font */
+    line-height: 1.6;      /* Improve readability */
+    margin: 20px;         /* Add some margin around the content */
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333;          /* Dark gray text */
+}
+
+h1, h2, h3 {
+    color: #0056b3;     /* Darker blue for headings */
+}
+
+header {
+    text-align: center; /* Center the header content */
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 40px; /* Add space between sections */
+}
+
+.project {
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Add a border to project boxes */
+    padding: 20px;
+    background-color: #fff; /* White background for project boxes */
+}
+
+a {
+    color: #007bff;     /* Blue links */
+    text-decoration: none; /* Remove underlines by default */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underlines on hover */
+}
+
+ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;  /* Remove default padding */
+}
+
+ul li::before {
+    content: "\2022";  /* Add a bullet point (Unicode character) */
+    color: #007bff;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+footer {
+text-align: center;
+}
