@@ -51,3 +51,21 @@ ul li::before {
 footer {
 text-align: center;
 }
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.contact-form-container iframe {
+    max-width: 100%;
+    width: 640px;
+}
+
+@media (max-width: 680px) {
+    .contact-form-container iframe {
+        width: 100%;
+    }
+}
