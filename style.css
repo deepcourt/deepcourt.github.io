@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif; /* Use a common, web-safe font */
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif; /* Updated stack *
     line-height: 1.6;      /* Improve readability */
     margin: 20px 40px;         /* Add some margin around the content */
     background-color: #f4f4f4; /* Light gray background */
