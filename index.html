@@ -156,7 +156,10 @@
         </p>
         <p></p>
         <p></p>
-        <p>&copy; 2025 Carmelo Spanó. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Carmelo Spanó. All rights reserved.</p>
     </footer>    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
