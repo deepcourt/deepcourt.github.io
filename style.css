@@ -84,3 +84,40 @@ text-align: center;
     margin-left: auto; /* Centers the image */
     margin-right: auto; /* Centers the image */
 }
+
+/*
+ * Header Styling with Profile Photo
+ * -------------------------------------------------- */
+
+ header {
+    display: flex;         /* Aligns items in a row */
+    align-items: center;   /* Vertically centers the items */
+    margin-bottom: 40px;   /* Adds some space below the header */
+}
+
+.profile-photo {
+    width: 100px;           /* Sets the width of the photo */
+    height: 100px;          /* Sets the height of the photo */
+    border-radius: 50%;     /* This is the key to making it a circle! */
+    object-fit: cover;      /* Prevents the image from being distorted */
+    margin-right: 25px;     /* Creates space between the photo and your name */
+}
+
+.header-text h1 {
+    margin-bottom: 5px; /* Reduces space between h1 and h2 */
+}
+
+/*
+ * Responsive Design for Mobile
+ * -------------------------------------------------- */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* Stacks the photo on top of the text */
+        text-align: center;     /* Centers the text below the photo */
+    }
+
+    .profile-photo {
+        margin-right: 0;        /* Removes side margin */
+        margin-bottom: 20px;    /* Adds space below the photo */
+    }
+}
