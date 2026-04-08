@@ -168,6 +168,10 @@ footer {
 }
 
 /* --- SECTIONS & HEADINGS --- */
+section {
+    margin-top: 64px;
+}
+
 section h2, .deals-heading {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -258,6 +262,7 @@ section h2, .deals-heading {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    margin-bottom: 48px;
 }
 
 .project {
