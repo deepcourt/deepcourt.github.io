@@ -1,0 +1,348 @@
+/* --- CONFIGURATION & VARIABLES --- */
+:root {
+    --ball-bg: 83, 109, 51;
+    --primary-blue: #1a73e8;
+    --text-main: #1a1a1a;
+    --text-muted: #999;
+    --text-gray: #666;
+    --bg-sand: #fafaf9;
+    --border-light: rgba(0, 0, 0, 0.06);
+}
+
+/* --- FONTS --- */
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+/* --- BASE STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-main);
+    background-color: var(--bg-sand);
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- LAYOUT COMPONENTS --- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 250, 249, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 24px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- NAVIGATION --- */
+.nav-favicon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+}
+
+.nav-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* --- HERO SECTION --- */
+.hero-headline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.hero-bio {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.hero-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.hero-photo-float {
+    float: left;
+    margin-right: 14px;
+    margin-bottom: 6px;
+    margin-top: 2px;
+}
+
+/* --- TENNIS BALL ANIMATION --- */
+.tennis-ball-container {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(var(--ball-bg),1) 0%, rgba(var(--ball-bg),1) 56%, rgba(var(--ball-bg),0.15) 61%, rgba(var(--ball-bg),0.08) 65%, rgba(var(--ball-bg),0.04) 70%, rgba(var(--ball-bg),0.02) 75%, rgba(var(--ball-bg),0.005) 80%, rgba(250,250,249,0) 87%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: url('assets/icons/racket-cursor.svg') 16 16, pointer;
+}
+
+.tennis-ball-float {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+.tennis-ball-container pre {
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', Consolas, monospace;
+    font-size: 5px;
+    line-height: 5px;
+    letter-spacing: 0.02em;
+    white-space: pre;
+    margin: 0;
+    color: #D4FF00;
+    transition: color 0.5s ease-in-out;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+.tennis-ball-container:hover pre {
+    color: #FF10F0;
+}
+
+#b .s { color: rgba(255, 255, 255, 0.9); }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- SECTIONS & HEADINGS --- */
+section h2, .deals-heading {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* --- EXPERIENCE GRID --- */
+.experience-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-bottom: 32px;
+}
+
+.experience-col {
+    padding: 0 20px 0 0;
+    margin-right: 20px;
+    border-right: 1px solid var(--border-light);
+}
+
+.experience-col:last-child {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.experience-col h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.company-note {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.experience-col p {
+    font-size: 13px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* --- VC DEALS --- */
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 48px;
+}
+
+.deal-card {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.deal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+}
+
+.deal-name { font-weight: 500; font-size: 14px; color: var(--text-main); }
+.deal-amount { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); }
+.deal-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+.deal-badge {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+.deal-badge-success { background: #e6f4ea; color: #1e7e34; }
+.deal-badge-info { background: #e8f0fe; color: #1a73e8; }
+
+/* --- PROJECT CARDS --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.project {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.project:hover {
+    transform: scale(1.02);
+}
+
+.project-screenshot {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info { padding: 12px 14px; }
+.project-info h3 { font-size: 14px; font-weight: 500; color: var(--text-main); margin-bottom: 4px; }
+.project-info p { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 8px; }
+
+.project-stack {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.stack-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #f0f0ee;
+    color: var(--text-gray);
+}
+
+.project-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+/* --- FOOTER ELEMENTS --- */
+footer p, footer a {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+footer a:hover {
+    color: var(--text-main);
+}
+
+/* --- RESPONSIVE MOBILE OVERRIDES --- */
+@media (max-width: 768px) {
+    .deals-grid, .projects-grid, .experience-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-col {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: 0 0 16px 0;
+        margin: 0 0 16px 0;
+    }
+
+    .experience-col:last-child {
+        border-bottom: none;
+    }
+
+    .hero-headline { font-size: 20px; }
+
+    footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .tennis-ball-container {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 16px auto;
+        float: none;
+    }
+}
